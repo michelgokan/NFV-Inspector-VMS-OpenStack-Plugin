@@ -50,15 +50,21 @@ read -r openstack_user_volume_api_version
 echo "Please enter OpenStack identity API version (3):"
 read -r openstack_user_identity_api_version
 
+con=''
+
 if [ -f ./openstack_fulladmin ]; then
     echo "An OpenStack configuration already exists:"
     cat ./openstack_fulladmin
     echo "Do you want to overwrite above configs (y/N): "
     read -r con
-    if [ $con == 'y' ] || [ $con == 'Y' ]; then
-        echo "Creating KeyStone configuration under ./openstack_fulladmin (may ask for root password)"
+else
+    con="y"
+fi
 
-        sudo cat >openstack_fulladmin <<EOL
+if [ $con == 'y' ] || [ $con == 'Y' ]; then
+    echo "Creating KeyStone configuration under ./openstack_fulladmin (may ask for root password)"
+
+    sudo cat >openstack_fulladmin <<EOL
 export OS_USERNAME=${openstack_username}
 export OS_PASSWORD=${openstack_password}
 export OS_PROJECT_NAME=${openstack_project_name}
@@ -68,7 +74,6 @@ export OS_IDENTITY_API_VERSION=${openstack_user_identity_api_version}
 export OS_PROJECT_DOMAIN_NAME=${openstack_project_domain_name}
 export OS_USER_DOMAIN_NAME=${openstack_user_domain_name}
 EOL
-    fi
 fi
 
 echo "Attempting to connect to OpenStack API server and getting list of nodes..."

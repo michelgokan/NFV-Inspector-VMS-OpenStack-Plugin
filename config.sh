@@ -50,15 +50,15 @@ read -r openstack_user_volume_api_version
 echo "Please enter OpenStack identity API version (3):"
 read -r openstack_user_identity_api_version
 
-echo "Creating KeyStone configuration under ./openstack_fulladmin (may ask for root password)"
-
 if [ -f ./openstack_fulladmin ]; then
     echo "An OpenStack configuration already exists:"
     cat ./openstack_fulladmin
     echo "Do you want to overwrite above configs (y/N): "
     read -r con
     if [ $con == 'y' ] || [ $con == 'Y' ]; then
-        sudo cat >./openstack_fulladmin <<EOL
+        echo "Creating KeyStone configuration under ./openstack_fulladmin (may ask for root password)"
+
+        sudo cat >openstack_fulladmin <<EOL
 export OS_USERNAME=${openstack_username}
 export OS_PASSWORD=${openstack_password}
 export OS_PROJECT_NAME=${openstack_project_name}
@@ -119,8 +119,7 @@ if [ $? -eq 0 ]; then
      "{ \"category\": \"${PLUGIN_NAME}\", \"key\": \"openstack_user_domain_name\", \"value\": \"$openstack_user_domain_name\" }" \
      'http://127.0.0.1:3000/api/configurations'
 else
-    echo "Can't connect to Kubernetes with provided information!"
-    echo $kubernetes_api_test
+    echo "Can't connect to OpenStack with provided information!"
     echo "Exiting application!"
     exit 0
 fi

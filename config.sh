@@ -51,8 +51,7 @@ echo "Please enter OpenStack identity API version (3):"
 read -r openstack_user_identity_api_version
 
 echo "Creating KeyStone configuration under /root/openstack_fulladmin (may ask for root password)"
-sudo -s
-cat >/root/openstack_fulladmin <<EOL
+sudo cat >/root/openstack_fulladmin <<EOL
 export OS_USERNAME=${openstack_username}
 export OS_PASSWORD=${openstack_password}
 export OS_PROJECT_NAME=${openstack_project_name}

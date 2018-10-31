@@ -41,7 +41,7 @@ read -r openstack_project_name
 echo "Please enter OpenStack project domain name (default):"
 read -r openstack_project_domain_name
 
-echo "Please enter OpenStack project domain name (default):"
+echo "Please enter OpenStack user domain name (default):"
 read -r openstack_user_domain_name
 
 echo "Please enter OpenStack volume API version (2):"

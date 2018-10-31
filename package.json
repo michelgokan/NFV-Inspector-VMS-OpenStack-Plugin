@@ -1,5 +1,5 @@
 {
-  "name": "nfv-inspector-vms-kubernetes-plugin",
+  "name": "nfv-inspector-vms-openstack-plugin",
   "version": "1.0.0",
   "description": "",
   "main": "./lib/index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/michelgokan/NFV-Inspector-VMS-Kubernetes-Plugin.git"
+    "url": "git+https://github.com/michelgokan/NFV-Inspector-VMS-OpenStack-Plugin.git"
   },
   "author": "Michel Gokan Khan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/michelgokan/NFV-Inspector-VMS-Kubernetes-Plugin/issues"
+    "url": "https://github.com/michelgokan/NFV-Inspector-VMS-OpenStack-Plugin/issues"
   },
-  "homepage": "https://github.com/michelgokan/NFV-Inspector-VMS-Kubernetes-Plugin#readme",
+  "homepage": "https://github.com/michelgokan/NFV-Inspector-VMS-OpenStack-Plugin#readme",
   "dependencies": {
     "path": "^0.12.7",
     "strong-globalize": "^4.1.2"

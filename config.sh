@@ -22,8 +22,8 @@ if ! $(command_exists openstack); then
     sudo add-apt-repository cloud-archive:pike
     echo "sudo apt update && apt dist-upgrade"
     sudo apt update && apt dist-upgrade
-    echo "sudo apt install -y python-openstackclient software-properties-common chrony curl thin-provisioning-tools python-software-propertie"
-    sudo apt install -y python-openstackclient software-properties-common chrony curl thin-provisioning-tools python-software-propertie
+    echo "sudo apt install -y python-openstackclient software-properties-common chrony curl thin-provisioning-tools python-software-properties"
+    sudo apt install -y python-openstackclient software-properties-common chrony curl thin-provisioning-tools python-software-properties
 fi
 
 echo "Please enter OpenStack AUTH_URL address (HINT: normally http://{controller node IP}:35357/v3):"

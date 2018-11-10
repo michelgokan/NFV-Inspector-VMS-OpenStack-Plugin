@@ -74,6 +74,9 @@ export OS_IDENTITY_API_VERSION=${openstack_user_identity_api_version}
 export OS_PROJECT_DOMAIN_NAME=${openstack_project_domain_name}
 export OS_USER_DOMAIN_NAME=${openstack_user_domain_name}
 EOL
+
+   echo "A new OpenStack configuration has been created:"
+   cat ./openstack_fulladmin
 fi
 
 echo "Attempting to connect to OpenStack API server and getting list of nodes..."

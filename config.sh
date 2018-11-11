@@ -79,6 +79,9 @@ EOL
    cat ./openstack_fulladmin
 fi
 
+echo "Setting ./openstack_fulladmin permission..."
+sudo chmod 777 ./openstack_fulladmin
+
 echo "Attempting to connect to OpenStack API server and getting list of nodes..."
 source ./openstack_fulladmin
 openstack host list

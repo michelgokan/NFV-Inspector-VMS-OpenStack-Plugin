@@ -1,0 +1,25 @@
+{
+  "name": "openstack",
+  "plural": "openstack",
+  "base": "Model",
+  "properties": {},
+  "methods": {
+    "executeCommand": {
+      "isStatic": true,
+      "accepts": [{
+        "arg": "command",
+        "type": "string",
+        "http": {
+          "source": "query"
+        }
+      }],
+      "returns": {
+        "arg": "result",
+        "type": "json"
+      },
+      "http": {
+        "verb": "get"
+      }
+    }
+  }
+}

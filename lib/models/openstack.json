@@ -21,7 +21,27 @@
         "verb": "get"
       }
     },
-    "getNodes": {
+    "getHypervisors": {
+      "isStatic": true,
+      "returns": {
+        "arg": "result",
+        "type": "json"
+      },
+      "http": {
+        "verb": "get"
+      }
+    },
+    "getVMs": {
+      "isStatic": true,
+      "returns": {
+        "arg": "result",
+        "type": "json"
+      },
+      "http": {
+        "verb": "get"
+      }
+    },
+    "getFlavors": {
       "isStatic": true,
       "returns": {
         "arg": "result",
